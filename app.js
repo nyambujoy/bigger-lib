@@ -50,16 +50,28 @@ class FormOfficial {
             const titleDiv = document.createElement("h2");
             titleDiv.classList.add("titleH2")
             titleDiv.textContent = library[i].title;
+            titleDiv.setAttribute("contenteditable", "true"); // Make titleDiv editable
+            titleDiv.addEventListener("blur", function () {
+                library[i].title = titleDiv.textContent; // Update library data when editing is finished
+            });
             displayDiv.appendChild(titleDiv);
 
             const authorDiv = document.createElement("h3");
             authorDiv.classList.add("authorH3")
             authorDiv.textContent = library[i].author;
+            authorDiv.setAttribute("contenteditable", "true")
+            authorDiv.addEventListener("blur", () => {
+                library[i].author = authorDiv.textContent
+            })
             displayDiv.appendChild(authorDiv);
 
             const statusDiv = document.createElement("p");
             statusDiv.classList.add("statusP")
             statusDiv.textContent = library[i].status;
+            statusDiv.setAttribute("contenteditable", "true")
+            statusDiv.addEventListener("blur", () => {
+                library[i].status = statusDiv.textContent
+            })
             displayDiv.appendChild(statusDiv);
         }
         // const titleDiv = document.createElement("h2")
