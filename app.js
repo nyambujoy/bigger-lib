@@ -3,6 +3,7 @@ const modal = document.querySelector(".modal")
 const closeBtn = document.getElementById("close")
 const form = document.querySelector("#myForm")
 
+
 const submitBtn = document.getElementById("submitBtn")
 
 console.log(submitBtn)
@@ -17,6 +18,62 @@ closeBtn.addEventListener("click", () => {
     // alert("hello")
 })
 
+
+
+const library = []
+
+class FormOfficial {
+    constructor(title, author, status) {
+        this.title = title
+        this.author = author
+        this.status = status
+
+    }
+
+    display() {
+        const title = document.querySelector("#title").value
+        const author = document.querySelector("#Author").value
+        const status = document.querySelector("#status").value
+        // console.log(`the book ${this.title} was written by ${this.author}`)
+        const bookToAdd = new FormOfficial(title, author, status)
+        library.push(bookToAdd)
+        console.log(library)
+
+
+
+    }
+
+    addBookToLib() {
+        const displayDiv = document.querySelector(".display")
+        displayDiv.textContent = ""
+        for (let i = 0; i < library.length; i++) {
+            const titleDiv = document.createElement("h2");
+            titleDiv.classList.add("titleH2")
+            titleDiv.textContent = library[i].title;
+            displayDiv.appendChild(titleDiv);
+
+            const authorDiv = document.createElement("h3");
+            authorDiv.classList.add("authorH3")
+            authorDiv.textContent = library[i].author;
+            displayDiv.appendChild(authorDiv);
+
+            const statusDiv = document.createElement("p");
+            statusDiv.classList.add("statusP")
+            statusDiv.textContent = library[i].status;
+            displayDiv.appendChild(statusDiv);
+        }
+        // const titleDiv = document.createElement("h2")
+
+    }
+}
 submitBtn.addEventListener("click", () => {
+    const form = new FormOfficial()
+    form.display()
+    form.addBookToLib();
+
     modal.close()
+    document.getElementById("title").value = "";
+    document.getElementById("Author").value = "";
+    document.getElementById("status").value = "";
 })
+

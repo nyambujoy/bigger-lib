@@ -10,6 +10,7 @@ body {
     font-family: "Nunito", sans-serif;
     background: linear-gradient(135deg, #49618A, #EA7B6C);
     color: #FAD28C;
+    position: relative;
 }
 
 
@@ -103,4 +104,58 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #FAD28C;
+}
+
+h1 {
+    position: absolute;
+    top: 30px;
+    left: 450px;
+    font-size: 3rem;
+}
+
+.display {
+    border: 1px solid black;
+    height: 100vh;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* margin-top: 200px; */
+    padding-top: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    cursor: pointer;
+
+
+
+}
+
+.titleH2 {
+    font-size: 1.7rem;
+    color: rgb(2, 2, 56);
+    padding: 5px;
+    text-transform: capitalize;
+    transition: border-bottom 0.3s ease-out;
+
+
+}
+
+.titleH2:hover {
+    border-bottom: 1px solid black;
+    font-size: 2rem;
+}
+
+.aurhorH3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+}
+
+
+
+.statusP {
+    margin-bottom: 20px;
+    color: #EA7B6C;
+    font-size: 2rem;
 }
